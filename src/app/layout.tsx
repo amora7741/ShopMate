@@ -1,13 +1,14 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'ShopMate',
+  title: "ShopMate",
   description:
-    'Keep track of the items you are looking for when going on a shopping trip!',
+    "Keep track of the items you are looking for when going on a shopping trip!",
 };
 
 export default function RootLayout({
@@ -16,8 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={`${inter.className} antialiased`}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`${inter.className} antialiased`}>{children}</body>
+      </html>
+    </ClerkProvider>
   );
 }
