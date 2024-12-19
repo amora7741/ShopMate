@@ -2,7 +2,7 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
 const isBaseRoute = createRouteMatcher(["/"]);
-const isProtectedRoute = createRouteMatcher(["/home(.*)"]);
+const isProtectedRoute = createRouteMatcher([""]);
 
 export default clerkMiddleware(async (auth, req) => {
   if (isBaseRoute(req)) {
