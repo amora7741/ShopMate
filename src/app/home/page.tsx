@@ -1,10 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
 
 const HomePage = async () => {
-  const { userId } = await auth();
-
   return (
     <main className="flex h-[80vh] flex-col items-center justify-center gap-8">
       <h1 className="text-7xl font-bold">ShopMate</h1>
@@ -14,7 +11,7 @@ const HomePage = async () => {
       </p>
       <div className="flex items-center gap-8">
         <Button asChild>
-          <Link className="text-lg" href={userId ? "/lists" : "/login"}>
+          <Link className="text-lg" href="/login">
             Get Started
           </Link>
         </Button>
