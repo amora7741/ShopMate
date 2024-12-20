@@ -11,9 +11,9 @@ const Navbar = async () => {
 
   return (
     <div className="flex w-full items-center justify-between p-4">
-      <Link href="/home" className="flex items-center gap-2">
+      <Link href="/home" className="flex items-center gap-4">
         <FaShoppingCart className="size-8" />
-        <span className="text-xl font-semibold">ShopMate</span>
+        <span className="text-2xl font-semibold">ShopMate</span>
       </Link>
       <div className="flex items-center gap-4">
         <ThemeToggle />
@@ -21,7 +21,9 @@ const Navbar = async () => {
           <UserButton showName />
         ) : (
           <Button asChild>
-            <Link href="login">Sign In</Link>
+            <Link href="login" className="text-lg">
+              Sign In
+            </Link>
           </Button>
         )}
       </div>
