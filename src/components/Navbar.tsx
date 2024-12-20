@@ -4,6 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { Button } from "./ui/button";
 import { auth } from "@clerk/nextjs/server";
 import { UserButton } from "@clerk/nextjs";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = async () => {
   const { userId } = await auth();
@@ -15,7 +16,7 @@ const Navbar = async () => {
         <span className="text-xl font-semibold">ShopMate</span>
       </Link>
       <div className="flex items-center gap-4">
-        <Button variant="ghost">Theme</Button>
+        <ThemeToggle />
         {userId ? (
           <UserButton showName />
         ) : (
